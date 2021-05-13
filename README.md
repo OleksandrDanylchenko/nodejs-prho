@@ -21,6 +21,6 @@ $ yarn add nodejs-prho
 ## Usage
 ```js
 const prho = require('nodejs-prho')
-const factors = prho(420)
+const factors = prho(420n)
 // => [2 , 2 , 3 , 5 , 7]
 ```
