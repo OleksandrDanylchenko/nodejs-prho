@@ -1,4 +1,4 @@
-const phro = require('../src/phro');
+const phro = require('../src/prho');
 const testCases = require('./testCases.js');
 
 testCases.forEach(({ n, factors }) => {
