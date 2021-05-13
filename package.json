@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "Pollard's rho algorithm implemented in Node.js with long arithmetics",
   "main": "src/phro.js",
-  "scripts": {
-    "test": "node tests/tests.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OleksandrDanylchenko/nodejs-prho.git"
@@ -27,5 +24,13 @@
   "bugs": {
     "url": "https://github.com/OleksandrDanylchenko/nodejs-prho/issues"
   },
-  "homepage": "https://github.com/OleksandrDanylchenko/nodejs-prho#readme"
+  "homepage": "https://github.com/OleksandrDanylchenko/nodejs-prho#readme",
+  "scripts": {
+    "test": "node tests/tests.js"
+  },
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
 }

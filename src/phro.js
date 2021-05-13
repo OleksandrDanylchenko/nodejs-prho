@@ -1,10 +1,10 @@
-function getPrimeFactorization (n) {
+function getPrimeFactorization(n) {
   const N = BigInt(n);
   const primeFactors = [];
   factorNumber(N);
   return primeFactors.sort((a, b) => a > b || -(a < b));
 
-  function factorNumber (n) {
+  function factorNumber(n) {
     if (n === 1n) {
       return;
     }
@@ -17,7 +17,7 @@ function getPrimeFactorization (n) {
     factorNumber(divisor);
     factorNumber(n / divisor);
 
-    function rho (n, func) {
+    function rho(n, func) {
       let x = 2n;
       let y = 2n;
       let divisor = 1n;
@@ -33,22 +33,23 @@ function getPrimeFactorization (n) {
       } while (divisor === 1n);
 
       if (divisor === n) {
-        return rho(n, g); // Need to switch from f func to g func to avoid recursion stuck for some numbers
+        // Need to switch from f func to g func to avoid recursion stuck for some numbers
+        return rho(n, g);
       }
 
       return divisor;
     }
 
-    function isPrime (n) {
+    function isPrime(n) {
       for (let i = 2n; i * i <= n; i++) {
         if (n % i === 0n) return false;
       }
       return true;
     }
 
-    function abs (a, b) {
-      let A = typeof a === "bigint" ? a : BigInt(a);
-      let B = typeof b === "bigint" ? b : BigInt(b);
+    function abs(a, b) {
+      const A = typeof a === 'bigint' ? a : BigInt(a);
+      const B = typeof b === 'bigint' ? b : BigInt(b);
 
       const diff = A - B;
       if (diff < 0n) {
@@ -57,9 +58,9 @@ function getPrimeFactorization (n) {
       return diff;
     }
 
-    function gcd (a, b) {
-      let A = typeof a === "bigint" ? a : BigInt(a);
-      let B = typeof b === "bigint" ? b : BigInt(b);
+    function gcd(a, b) {
+      let A = typeof a === 'bigint' ? a : BigInt(a);
+      let B = typeof b === 'bigint' ? b : BigInt(b);
 
       if (A === 0n) {
         return B;
@@ -83,14 +84,14 @@ function getPrimeFactorization (n) {
       return B;
     }
 
-    function f (x) {
+    function f(x) {
       return x ** 2n - 1n;
     }
 
-    function g (x) {
+    function g(x) {
       return x ** 2n + 1n;
     }
   }
 }
 
-module.exports = getPrimeFactorization
+module.exports = getPrimeFactorization;

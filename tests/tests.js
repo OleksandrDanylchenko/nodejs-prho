@@ -1,4 +1,4 @@
-const phro = require("../src/phro");
+const phro = require('../src/phro');
 
 const tests = [
   {
@@ -29,12 +29,12 @@ tests.forEach(({ n, factors }) => {
   });
 });
 
-function equalsArrays (a, b) {
+function equalsArrays(a, b) {
   if (a.length !== b.length) { return false; }
   const uniqueValues = new Set([...a, ...b]);
   for (const uniqueValue of uniqueValues) {
-    const aValueAmount = a.filter(value => value === uniqueValue).length;
-    const bValueAmount = b.filter(value => value === uniqueValue).length;
+    const aValueAmount = a.filter((value) => value === uniqueValue).length;
+    const bValueAmount = b.filter((value) => value === uniqueValue).length;
     if (aValueAmount !== bValueAmount) {
       return false;
     }
