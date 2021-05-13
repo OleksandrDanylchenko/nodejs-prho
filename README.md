@@ -8,7 +8,7 @@ Wiki - https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm
 Codepen - https://codepen.io/michaelsknobloch/pen/Kzqeyb
 
 ## Reasoning
-Solved infinite loops, which can happen on some numbers in https://www.npmjs.com/package/prho package, with recursive approach from https://codepen.io/michaelsknobloch/pen/Kzqeyb and usage of different functions to find factors to prevent stucking.
+Solved infinite loops, which can happen on some numbers in https://www.npmjs.com/package/prho package, with recursive approach from https://codepen.io/michaelsknobloch/pen/Kzqeyb and usage of different functions to find factors to prevent stucking. Also it support long arithmetics with native [BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt) JS object.
 
 ## Installation
 ```console
