@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prho": "node src/prho.js"
+    "prho": "node src/prho.js",
+    "prho-git": "node src/prho_git.js"
   },
   "keywords": [],
   "author": "",

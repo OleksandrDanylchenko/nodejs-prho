@@ -1,49 +1,46 @@
 const getPrimeFactorization = n => {
-  let N = BigInt(n);
+  let initN = BigInt(n);
+  let N = BigInt(initN);
 
   const primeFactors = [];
 
-  let divisor = calculateDivisor(N);
-  if (!divisor) return [N];
-
+  let divisor = null;
   while (true) {
-    primeFactors.push(divisor);
-    N = N / divisor;
     divisor = calculateDivisor(N);
-    if (!divisor) {
-      primeFactors.push(N);
-      break;
+    if (isPrime(divisor)) {
+      primeFactors.push(divisor);
+      const sum = primeFactors.reduce((num, val) => num * val);
+      if (sum === initN) {
+        break;
+      } else {
+        N = N / divisor;
+      }
+    } else {
+      N = N / divisor;
     }
   }
 
   return primeFactors.sort((a, b) => a > b || -(a < b));
 
   function calculateDivisor (N) {
-    if (N === 1) return false;
-    if (N % 2n === 0n) return N === 2n ? false : 2n;
-    if (isPrime(N)) return false;
+    if (N === 1n) return N;
+    if (N % 2n === 0n) return 2n;
+    if (isPrime(N)) return N;
 
     let x = 2n;
     let y = 2n;
     let divisor = 1n;
 
     while (divisor === 1n) {
-      x = g(x);
-      y = g(g(x));
+      x = f(x, N);
+      y = f(f(y, N), N);
       divisor = gcd(abs(x, y), N);
     }
 
-    return divisor === n ? false : divisor;
+    return divisor === N ? N : divisor;
 
-    function g (x) {
-      return x ** 2n - 1n;
-    }
-
-    function isPrime (p) {
-      for (let i = 2n; i * i <= p; i++) {
-        if (p % i === 0n) return false;
-      }
-      return true;
+    function f (x, n) {
+      return (x ** 2n + 1n) % n;
     }
 
     function gcd (a, b) {
@@ -74,8 +71,17 @@ const getPrimeFactorization = n => {
       return diff;
     }
   }
+
+  function isPrime (p) {
+    for (let i = 2n; i * i <= p; i++) {
+      if (p % i === 0n) return false;
+    }
+    return true;
+  }
 };
 
-console.log(getPrimeFactorization(3000));
+console.time("Factor");
+console.log(getPrimeFactorization(9569565));
+console.timeEnd("Factor");
 
 module.exports = getPrimeFactorization;
