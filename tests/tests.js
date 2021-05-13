@@ -1,32 +1,12 @@
 const phro = require('../src/phro');
+const testCases = require('./testCases.js');
 
-const tests = [
-  {
-    n: 420,
-    factors: [2, 2, 3, 5, 7]
-  },
-  {
-    n: 1337,
-    factors: [7, 191]
-  },
-  {
-    n: 9999,
-    factors: [3, 3, 11, 101]
-  },
-  {
-    n: 999999999,
-    factors: [3, 3, 3, 3, 37, 333667]
-  }
-];
-
-tests.forEach(({ n, factors }) => {
+testCases.forEach(({ n, factors }) => {
   const calculatedFactors = phro(n);
   console.log(`Calculated factors of ${n} are ${calculatedFactors}`);
 
   const areFactorsEqual = equalsArrays(calculatedFactors, factors);
-  console.assert(!areFactorsEqual, {
-    errorMsg: `Calculated factors ${calculatedFactors} are not matching with ${factors}`
-  });
+  console.assert(areFactorsEqual, `Calculated factors ${calculatedFactors} are not matching with ${factors}`);
 });
 
 function equalsArrays(a, b) {
