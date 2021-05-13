@@ -1,6 +1,6 @@
 {
   "name": "nodejs-prho",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Pollard's rho algorithm implemented in Node.js with long arithmetics",
   "main": "src/phro.js",
   "repository": {
