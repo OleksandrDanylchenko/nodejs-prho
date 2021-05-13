@@ -1,7 +1,7 @@
 {
   "name": "nodejs-prho",
   "version": "0.0.1",
-  "description": "Pollard's rho algorithm implemented in Node.js",
+  "description": "Pollard's rho algorithm implemented in Node.js with long arithmetics",
   "main": "src/phro.js",
   "scripts": {
     "test": "node tests/tests.js"
@@ -16,7 +16,13 @@
     "prime factorization",
     "pollard rho algorithm"
   ],
-  "author": "Oleksandr Danylchenko",
+  "engines": {
+    "node": ">=10.4.0"
+  },
+  "author": {
+    "name": "Oleksandr Danylchenko",
+    "email": "danylchenko.oleksandr@gmail.com"
+  },
   "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/OleksandrDanylchenko/nodejs-prho/issues"
