@@ -6,7 +6,8 @@ module.exports = {
     'jest/globals': true
   },
   extends: [
-    'airbnb-base'
+    'airbnb-base',
+    'plugin:jest/all'
   ],
   parserOptions: {
     ecmaVersion: 12
