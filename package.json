@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Pollard's rho algorithm implemented in Node.js with long arithmetics",
   "main": "src/index.js",
+  "types": "./src/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OleksandrDanylchenko/nodejs-prho.git"
