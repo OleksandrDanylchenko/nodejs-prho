@@ -2,3 +2,5 @@ node_modules
 .idea
 *.iml
 tests
+jest.config.js
+.eslintrc.js
