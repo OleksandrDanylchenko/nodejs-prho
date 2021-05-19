@@ -12,7 +12,7 @@ Solved infinite loops, which can happen on some numbers in https://www.npmjs.com
 
 ## Installation
 ```console
-$ npm install prho
+$ npm install nodejs-prho
 ```
 ```console
 $ yarn add nodejs-prho
